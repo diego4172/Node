@@ -10,7 +10,17 @@ const miPedido = new Promise((resolve, reject) => {
     },3000)
 })
 
-const manejarPedido = (mensajeConfirmacion) => console.log(mensajeConfirmacion);
+/*const manejarPedido = (mensajeConfirmacion) => console.log(mensajeConfirmacion);
 const rechazarPedido = (mensajeError) => console.log(mensajeError);
 
-miPedido.then(manejarPedido,rechazarPedido);
+miPedido.then(manejarPedido,rechazarPedido);*/
+
+// lo siguiente es equivalente a lo de arriba
+
+miPedido
+    .then((mensajeConfirmacion) => console.log(mensajeConfirmacion))
+    .then(null,(mensajeError) => console.log(mensajeError))
+
+miPedido
+    .then((mensajeConfirmacion) => console.log(mensajeConfirmacion))
+    .catch((mensajeError) => console.log(mensajeError))
